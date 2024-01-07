@@ -1,0 +1,21 @@
+type Student {
+    id: ID!
+    name: String
+    level: Level
+}
+enum Level {
+    A
+    B
+    C
+    D
+}
+type Query {
+    findAll: [Student]
+    findById(id: ID): Student
+
+}
+type Mutation {
+    create(name: String, level: Level): Student
+    update(id: ID, name: String, level: Level): Student
+    delete(id: ID): Student
+}
