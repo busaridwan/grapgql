@@ -35,4 +35,8 @@ public class StudentController {
     public Student update(@Argument Integer id, @Argument String name, @Argument Level level){
         return service.update(id,name,level);
     }
+    @MutationMapping
+    public Student delete(@Argument Integer id){
+        return service.delete(id);
+    }
 }
