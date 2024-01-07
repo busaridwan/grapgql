@@ -2,6 +2,7 @@ package com.busaridwan.graphqldemo.service;
 
 import com.busaridwan.graphqldemo.model.Level;
 import com.busaridwan.graphqldemo.model.Student;
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -41,5 +42,11 @@ public class StudentService {
             throw new IllegalArgumentException("Invalid student record");
         }
         return updatedStudent;
+    }
+
+    @PostConstruct
+    private void init(){
+        students.add(new Student(id.incrementAndGet(), "Ridwan", Level.A));
+        students.add(new Student(id.incrementAndGet(), "Busari", Level.B));
     }
 }
