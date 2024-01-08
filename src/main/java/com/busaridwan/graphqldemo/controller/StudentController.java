@@ -23,12 +23,12 @@ public class StudentController {
     }
 
     @QueryMapping
-    @Cacheable(value = "Student")
+//    @Cacheable(value = "Student")
     public List<Student> findAll(){
         return service.findAll();
     }
     @QueryMapping
-    @Cacheable(key = "#id", value = "Student")
+//    @Cacheable(key = "#id", value = "Student")
     public Optional<Student> findById(@Argument Integer id){
         return service.findById(id);
     }
@@ -42,7 +42,7 @@ public class StudentController {
         return service.update(id,name,level);
     }
     @MutationMapping
-    @CacheEvict(key = "#id", value = "Student")
+//    @CacheEvict(key = "#id", value = "Student")
     public Student delete(@Argument Integer id){
         return service.delete(id);
     }
